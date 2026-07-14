@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyVerse - Every Sky Has a Story</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loader-animation">
+            <div class="star-loader"></div>
+            <p>SkyVerse</p>
+        </div>
+    </div>
+
+    <!-- Opening Animation -->
+    <div id="openingAnimation" class="opening-animation">
+        <canvas id="starsCanvas"></canvas>
+        <div class="opening-content">
+            <p class="opening-text" id="openingText">Before you scroll… look up.</p>
+            <div class="logo-container" id="logoContainer" style="opacity: 0;">
+                <h1 class="main-logo">SKYVERSE</h1>
+                <p class="tagline">Every Sky Has a Story.</p>
+                <button class="begin-btn" id="beginBtn">Begin the Journey</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">🌌</span>
+                <span class="logo-text">SkyVerse</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#wallpapers" class="nav-link">Wallpapers</a>
+                <a href="#journal" class="nav-link">Sky Journal</a>
+                <a href="#quotes" class="nav-link">Quotes</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#universe" class="nav-link">Universe</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="mailto:skyverse322@gmail.com" class="nav-link">Email</a>
+                <a href="#admin" class="nav-link admin-link">⚙️ My Creation</a>
+            </div>
+            <div class="nav-controls">
+                <button class="dark-toggle" id="darkToggle">🌙</button>
+                <button class="sound-toggle" id="soundToggle">🔊</button>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <canvas id="skyCanvas"></canvas>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="hero-title">Every Sky Tells a Story</h2>
+                    <p class="hero-subtitle">Explore the most breathtaking celestial moments captured in time</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wallpapers Section -->
+        <section id="wallpapers" class="wallpapers">
+            <div class="section-header">
+                <h2>Our Collections</h2>
+                <p>Curated sky moments for your soul</p>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="clouds">☁ Clouds</button>
+                <button class="filter-btn" data-filter="sunsets">🌅 Sunsets</button>
+                <button class="filter-btn" data-filter="moon">🌙 Moon</button>
+                <button class="filter-btn" data-filter="rain">🌧 Rain</button>
+                <button class="filter-btn" data-filter="night">🌌 Night Sky</button>
+                <button class="filter-btn" data-filter="stars">⭐ Stars</button>
+            </div>
+            <div class="masonry-gallery" id="masonryGallery">
+                <!-- Wallpaper items will be generated here -->
+            </div>
+        </section>
+
+        <!-- Sky Journal Section -->
+        <section id="journal" class="sky-journal">
+            <div class="section-header">
+                <h2>Sky Journal</h2>
+                <p>Daily reflections from the clouds</p>
+            </div>
+            <div class="journal-entries" id="journalEntries">
+                <!-- Journal entries will be generated here -->
+            </div>
+        </section>
+
+        <!-- Quotes Section -->
+        <section id="quotes" class="quotes-section">
+            <div class="quote-container" id="quoteContainer">
+                <p class="quote-text" id="quoteText"></p>
+                <p class="quote-author" id="quoteAuthor"></p>
+                <button class="quote-btn" id="newQuoteBtn">New Inspiration</button>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery">
+            <div class="section-header">
+                <h2>Featured Gallery</h2>
+                <p>Premium selections from SkyVerse</p>
+            </div>
+            <div class="featured-grid" id="featuredGrid">
+                <!-- Featured items will be generated here -->
+            </div>
+        </section>
+
+        <!-- Universe Section -->
+        <section id="universe" class="universe">
+            <div class="section-header">
+                <h2>The Universe</h2>
+                <p>Explore the cosmos interactively</p>
+            </div>
+            <canvas id="universeCanvas"></canvas>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="section-header">
+                <h2>About SkyVerse</h2>
+                <p>Our Story</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>A Dream in the Sky</h3>
+                    <p>SkyVerse is more than a photography website. It's an emotional journey through the most magical moments the sky has ever offered. We believe every sky tells a story, and we're here to help you experience it.</p>
+                    <p>Our collection features breathtaking celestial moments, serene cloud formations, and stunning astronomical phenomena. Each image is carefully curated to inspire peace, wonder, and connection with the universe.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Section - My Creation -->
+        <section id="admin" class="admin-panel" style="display: none;">
+            <div class="admin-container">
+                <h2>Admin Dashboard - My Creation</h2>
+                <div class="admin-content">
+                    <div class="upload-section">
+                        <h3>Upload Your Creation</h3>
+                        <form id="uploadForm" class="upload-form">
+                            <div class="form-group">
+                                <label for="photoTitle">Photo Title</label>
+                                <input type="text" id="photoTitle" required placeholder="Enter photo title">
+                            </div>
+                            <div class="form-group">
+                                <label for="photoCategory">Category</label>
+                                <select id="photoCategory" required>
+                                    <option value="">Select Category</option>
+                                    <option value="clouds">☁ Clouds</option>
+                                    <option value="sunsets">🌅 Sunsets</option>
+                                    <option value="moon">🌙 Moon</option>
+                                    <option value="rain">🌧 Rain</option>
+                                    <option value="night">🌌 Night Sky</option>
+                                    <option value="stars">⭐ Stars</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="photoDescription">Description</label>
+                                <textarea id="photoDescription" placeholder="Add a poetic description..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="photoImage">Upload Image</label>
+                                <input type="file" id="photoImage" accept="image/*" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="photoType">Type & Price</label>
+                                <select id="photoType" required>
+                                    <option value="static">Static Image - ₹50 INR</option>
+                                    <option value="moving">Moving Wallpaper - ₹150 INR</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="submit-btn">Add to My Creation</button>
+                        </form>
+                    </div>
+                    <div class="creations-list">
+                        <h3>Your Creations</h3>
+                        <div id="creationsList" class="creations-grid">
+                            <!-- User creations will be displayed here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Wallpaper Modal -->
+    <div id="wallpaperModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="Wallpaper">
+                <div class="modal-info">
+                    <h3 id="modalTitle"></h3>
+                    <p id="modalCaption"></p>
+                    <p class="modal-date" id="modalDate"></p>
+                    <p class="modal-price" id="modalPrice"></p>
+                    <div class="modal-actions">
+                        <button class="action-btn" id="downloadBtn">⬇ Download</button>
+                        <button class="action-btn" id="favoriteBtn">♡ Favorite</button>
+                        <button class="action-btn" id="shareBtn">↗ Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>SkyVerse</h3>
+                <p>Every Sky Has a Story.</p>
+            </div>
+            <div class="footer-info">
+                <p>Designed by DaraKai</p>
+                <p>Contact: <a href="mailto:skyverse322@gmail.com">skyverse322@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Particles -->
+    <div id="particlesContainer" class="particles"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
