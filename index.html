@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Loading Screen -->
     <div id="loadingScreen" class="loading-screen">
         <div class="loader-animation">
             <div class="star-loader"></div>
@@ -16,7 +15,6 @@
         </div>
     </div>
 
-    <!-- Opening Animation -->
     <div id="openingAnimation" class="opening-animation">
         <canvas id="starsCanvas"></canvas>
         <div class="opening-content">
@@ -29,7 +27,6 @@
         </div>
     </div>
 
-    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
@@ -55,9 +52,7 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
         <section id="home" class="hero">
             <canvas id="skyCanvas"></canvas>
             <div class="hero-content">
@@ -68,7 +63,6 @@
             </div>
         </section>
 
-        <!-- Wallpapers Section -->
         <section id="wallpapers" class="wallpapers">
             <div class="section-header">
                 <h2>Our Collections</h2>
@@ -83,23 +77,17 @@
                 <button class="filter-btn" data-filter="night">🌌 Night Sky</button>
                 <button class="filter-btn" data-filter="stars">⭐ Stars</button>
             </div>
-            <div class="masonry-gallery" id="masonryGallery">
-                <!-- Wallpaper items will be generated here -->
-            </div>
+            <div class="masonry-gallery" id="masonryGallery"></div>
         </section>
 
-        <!-- Sky Journal Section -->
         <section id="journal" class="sky-journal">
             <div class="section-header">
                 <h2>Sky Journal</h2>
                 <p>Daily reflections from the clouds</p>
             </div>
-            <div class="journal-entries" id="journalEntries">
-                <!-- Journal entries will be generated here -->
-            </div>
+            <div class="journal-entries" id="journalEntries"></div>
         </section>
 
-        <!-- Quotes Section -->
         <section id="quotes" class="quotes-section">
             <div class="quote-container" id="quoteContainer">
                 <p class="quote-text" id="quoteText"></p>
@@ -108,18 +96,14 @@
             </div>
         </section>
 
-        <!-- Gallery Section -->
         <section id="gallery" class="gallery">
             <div class="section-header">
                 <h2>Featured Gallery</h2>
                 <p>Premium selections from SkyVerse</p>
             </div>
-            <div class="featured-grid" id="featuredGrid">
-                <!-- Featured items will be generated here -->
-            </div>
+            <div class="featured-grid" id="featuredGrid"></div>
         </section>
 
-        <!-- Universe Section -->
         <section id="universe" class="universe">
             <div class="section-header">
                 <h2>The Universe</h2>
@@ -128,7 +112,6 @@
             <canvas id="universeCanvas"></canvas>
         </section>
 
-        <!-- About Section -->
         <section id="about" class="about">
             <div class="section-header">
                 <h2>About SkyVerse</h2>
@@ -143,7 +126,6 @@
             </div>
         </section>
 
-        <!-- Admin Section - My Creation -->
         <section id="admin" class="admin-panel" style="display: none;">
             <div class="admin-container">
                 <h2>Admin Dashboard - My Creation</h2>
@@ -187,16 +169,13 @@
                     </div>
                     <div class="creations-list">
                         <h3>Your Creations</h3>
-                        <div id="creationsList" class="creations-grid">
-                            <!-- User creations will be displayed here -->
-                        </div>
+                        <div id="creationsList" class="creations-grid"></div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Wallpaper Modal -->
     <div id="wallpaperModal" class="modal" style="display: none;">
         <div class="modal-content">
             <button class="modal-close">&times;</button>
@@ -217,7 +196,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-brand">
@@ -231,7 +209,6 @@
         </div>
     </footer>
 
-    <!-- Floating Particles -->
     <div id="particlesContainer" class="particles"></div>
 
     <script src="script.js"></script>
